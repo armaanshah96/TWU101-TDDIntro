@@ -32,27 +32,30 @@ public class LibraryTest {
     }
 
     @Test
-    @Ignore // Remove each @Ignore and implement test
     public void shouldPrintBookTitleWhenThereIsOneBook() {
         String title = "Book Title";
         books.add(title);
 
         library.listBooks();
-
-        // add a verify statement here that shows that the book title was printed by the printStream
+        verify(printStream).println("Book Title\n");
     }
 
     @Test
-    @Ignore // Remove each @Ignore and implement test
     public void shouldPrintNothingWhenThereAreNoBooks() {
+        library.listBooks();
 
-        // implement me
+        verify(printStream).println("");
     }
 
     @Test
-    @Ignore // Remove each @Ignore and implement test
     public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() throws IOException {
-        // implement me
+        String title = "Book1";
+        String title2 = "Book2";
+        books.add(title);
+        books.add(title2);
+
+        library.listBooks();
+        verify(printStream).println("Book1\nBook2\n");
     }
 
     @Test
