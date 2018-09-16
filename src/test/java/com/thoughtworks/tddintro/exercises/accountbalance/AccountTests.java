@@ -5,9 +5,11 @@ import org.junit.Test;
 
 public class AccountTests {
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
-        Account account = new Account();
+        Account account = new Account(100);
+        account.depositMoney(50);
+
+        assert(account.getBalance() == 150);
     }
 
     @Test
