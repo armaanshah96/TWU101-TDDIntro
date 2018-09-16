@@ -3,18 +3,20 @@ package com.thoughtworks.tddintro.exercises.accountbalance;
 public class Account {
     private int balance;
 
-    public Account(int n) {
-        balance = n;
+    public Account(int startingBalance) {
+        balance = startingBalance;
     }
 
     public int getBalance() {
         return balance;
     }
 
-    public void depositMoney(int n) {
-        balance += n;
+    public void depositMoney(int depositAmount) {
+        balance += depositAmount;
     }
 
-    
+    public void withdrawMoney(int withdrawAmount){
+        balance -= withdrawAmount;
+    }
 
 }

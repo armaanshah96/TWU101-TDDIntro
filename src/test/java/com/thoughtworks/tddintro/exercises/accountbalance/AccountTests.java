@@ -1,5 +1,6 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -13,9 +14,11 @@ public class AccountTests {
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
+        Account account = new Account(100);
+        account.withdrawMoney(50);
 
+        assert(account.getBalance() == 50);
     }
 
     @Test
